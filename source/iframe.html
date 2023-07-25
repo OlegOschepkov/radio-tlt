@@ -116,6 +116,7 @@
   }
 
   const renderData = (data) => {
+    container.innerHTML = "";
     const arr1 = data.split('\n');
     arr1.forEach((el, i) => {
     if (el.length > 0) {
