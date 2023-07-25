@@ -1,0 +1,14 @@
+TLT-Repiter:
+    DCL;Crosslink;Togliatti <---> Ulyanovsk;Internet;Rus
+    ---TLT-Repiter---;Togliatti;434.750MHz;OrangePi-PC-->Baofeng UV-5R;Russian Federation
+    Navigator, Nikolai;Tolyatti - Borkovka;PC Only;[gCLNT 4.05.0] GRNClient for Android;Russian Federation
+UL-Repiter:
+    DCL;Crosslink;Togliatti <---> Ulyanovsk;Internet;Rus
+    @bot;Togliatti;n/a;Record bot;Russian Federation
+TLT-Repiter:
+    DCL;Crosslink;Togliatti <---> Ulyanovsk;Internet;Rus
+    ---TLT-Repiter---;Togliatti;434.750MHz;OrangePi-PC-->Baofeng UV-5R;Russian Federation
+    Navigator, Nikolai;Tolyatti - Borkovka;PC Only;[gCLNT 4.05.0] GRNClient for Android;Russian Federation
+UL-Repiter:
+    DCL;Crosslink;Togliatti <---> Ulyanovsk;Internet;Rus
+    @bot;Togliatti;n/a;Record bot;Russian Federation

@@ -1,0 +1,82 @@
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+@mixin has-hover {
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover:not(.focus-visible),
+    &.focus-visible:focus {
+      @content;
+    }
+  }
+}
+
+// Desktop first
+@mixin vp-1919 {
+  @media (max-width: $vp-1920 - 1) {
+    @content;
+  }
+}
+
+@mixin vp-1599 {
+  @media (max-width: $vp-1600 - 1) {
+    @content;
+  }
+}
+
+@mixin vp-1439 {
+  @media (max-width: $vp-1440 - 1) {
+    @content;
+  }
+}
+
+@mixin vp-1279 {
+  @media (max-width: $vp-1280 - 1) {
+    @content;
+  }
+}
+
+@mixin vp-1023 {
+  @media (max-width: $vp-1024 - 1) {
+    @content;
+  }
+}
+
+@mixin vp-767 {
+  @media (max-width: $vp-768 - 1) {
+    @content;
+  }
+}
+
+@mixin vp-374 {
+  @media (max-width: $vp-375 - 1) {
+    @content;
+  }
+}
+
+@mixin reset-link {
+  color: inherit;
+  text-decoration: none;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+@mixin reset-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin reset-item {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin link {
+  font-weight: $font-weight--medium;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: -0.02em;
+}

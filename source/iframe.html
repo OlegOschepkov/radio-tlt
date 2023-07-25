@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css">
+</head>
+
+<body>
+  <main>
+    <div class="container">
+    </div>
+  </main>
+</body>
+
+<style>
+  html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  html::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  main {
+    overflow: hidden;
+    background-color: #1D2131;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Oswald, Arial ,sans-serif;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 700px;
+    height: 100%;
+    overflow: hidden;
+    padding: 0 24px;
+  }
+
+  .wrapper {
+    height: auto;
+  }
+
+  h3 {
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 16px;
+    padding-top: 36px;
+    color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 42px #0fa,
+      0 0 82px #0fa;
+  }
+
+  p {
+    position: relative;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 42px #0fa,
+      0 0 82px #0fa;
+  }
+
+  .scroll-horizontal span {
+    display: inline-block;
+    animation: slide-left 5s linear infinite;
+  }
+
+  @keyframes slide-left {
+    0% { transform: translateX(0); }
+    10% { transform: translateX(0); }
+    45% { transform: translateX(calc(-100% + 233px)); }
+    55% { transform: translateX(calc(-100% + 233px)); }
+    90% { transform: translateX(0); }
+    100% { transform: translateX(0); }
+  }
+</style>
+
+</html>
+
+<script>
+  const container = document.querySelector('.container');
+  const HEIGHT = 540;
+
+  const autoScroll = () => {
+    const elems = document.querySelectorAll('[data-scroll]');
+    if (elems.length && container) {
+      elems.forEach((el) => {
+        if (el.scrollWidth > container.clientWidth) {
+          el.classList.add('scroll-horizontal')
+        }
+      })
+    }
+  }
+
+  const renderData = (data) => {
+    const arr1 = data.split('\n');
+    arr1.forEach((el, i) => {
+    if (el.length > 0) {
+      if (el.includes(':')) {
+        container.innerHTML = container.innerHTML + `<h3 data-scroll><span>${el}</span></h3>`;
+      } else {
+        container.innerHTML = container.innerHTML + `<p data-scroll><span>${el.split(';').slice(0, 2).join('; ')};</span></p>`;
+      }
+    }
+    })
+  }
+
+  const requestData = () => {
+    let xhr = new XMLHttpRequest();
+
+    xhr.open('GET', '/files/users.frn');
+
+    xhr.send();
+
+    xhr.onload = function() {
+      if (xhr.status != 200) {
+        console.log(`Ошибка ${xhr.status}: ${xhr.statusText}`);
+      } else {
+        console.log(`Готово, получили ${xhr.response.length} байт`);
+        renderData(xhr.response);
+        autoScroll();
+      }
+    };
+
+    xhr.onprogress = function(event) {
+      if (event.lengthComputable) {
+        console.log(`Получено ${event.loaded} из ${event.total} байт`);
+      } else {
+        console.log(`Получено ${event.loaded} байт`); // если в ответе нет заголовка Content-Length
+      }
+    };
+
+    xhr.onerror = function() {
+      console.log("Запрос не удался");
+    };
+  }
+
+  requestData();
+
+  window.setInterval(function() {
+    requestData();
+  }, 20000);
+</script>

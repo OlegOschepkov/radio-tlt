@@ -1,0 +1,26 @@
+.button {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid $color-azure;
+  border-radius: 0.6em;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  line-height: 1;
+  padding: $mobile-padding $desktop-padding;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: $font-weight-bold;
+  color: $color-default-white;
+  box-shadow: 0 0 40px 40px $color-azure inset, 0 0 0 0 $color-azure;
+  transition: $trans-default;
+
+  @include has-hover {
+    outline: 0;
+    box-shadow: 0 0 10px 0 rgba($color-azure, 0.5) inset, 0 0 10px 4px rgba($color-azure, 0.2);
+  }
+}

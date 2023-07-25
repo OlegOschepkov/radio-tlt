@@ -1,0 +1,41 @@
+/* stylelint-disable */
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden !important;
+}
+/* stylelint-enable */
+
+.wrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  .header,
+  .footer {
+    flex-shrink: 0;
+  }
+
+  main {
+    flex-grow: 1;
+  }
+}
+
+.scroll-lock {
+  position: fixed;
+
+  overflow-y: auto;
+
+  overflow: hidden;
+  -webkit-overflow-scrolling: none;
+
+  overscroll-behavior: none;
+  touch-action: none;
+}

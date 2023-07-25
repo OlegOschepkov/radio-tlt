@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  border-top: 5px solid $color-grey;
+  border-bottom: 5px solid $color-grey;
+  margin-top: 12px;
+
+  h1 {
+    color: $color-darkmain;
+    text-align: center;
+    margin: 16px 0;
+    font-size: 28px;
+    line-height: 150%;
+  }
+}
+

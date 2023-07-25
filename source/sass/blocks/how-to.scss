@@ -1,0 +1,14 @@
+.how-to {
+  display: inline-flex;
+  flex-direction: column;
+  border: 3px groove $color-default-black;
+  padding: 10px;
+  border-radius: 10px;
+
+  p {
+    margin: 0;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: $font-weight-bold;
+  }
+}

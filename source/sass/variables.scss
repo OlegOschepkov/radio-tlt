@@ -1,0 +1,60 @@
+// Colors
+//---------------------------------
+
+// Default
+
+$color-default-black:               #000000;
+$color-default-white:               #ffffff;
+$color-transparent:                 rgba(255, 255, 255, 0);
+
+// Base
+
+$color-darkmain:                    #262626;
+$color-dark:                        #1d2131;
+$color-alabaster:                   #f8f8f8;
+$color-light-grey:                  #8f8f8f;
+$color-grey:                        #7e7e7e;
+$color-persian-blue:                #1F10C7;
+$color-azure:                       #007bff;
+$color-spring:                      #00FFAA;
+$color-alizarin:                    #ee2c3c;
+
+
+// Typography
+//---------------------------------
+
+$font-family:                       "Tahoma", "Arial", sans-serif;
+
+$fz-default:                        14px;
+
+$font-weight-regular:               400;
+$font-weight-bold:                  600;
+
+// Animation
+//---------------------------------
+
+$tf-default:                        ease;
+$trans-default:                     0.3s $tf-default;
+
+// Viewports
+//---------------------------------
+
+$vp-320:                            320px;
+$vp-375:                            375px;
+$vp-768:                            768px;
+$vp-1024:                           1024px;
+$vp-1025:                           1025px;
+$vp-1280:                           1280px;
+$vp-1440:                           1440px;
+$vp-1600:                           1600px;
+$vp-1920:                           1920px;
+
+// Retina
+//---------------------------------
+
+$retina-dpi:                        144dpi;
+$retina-dppx:                       1.5dppx;
+
+// Сетка
+$desktop-padding:                   24px;
+$mobile-padding:                    16px;

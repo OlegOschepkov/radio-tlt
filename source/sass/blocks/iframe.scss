@@ -1,0 +1,18 @@
+.iframe {
+  margin-bottom: 24px;
+  position: relative;
+
+  iframe {
+    width: 300px;
+    height: 540px;
+    border: none;
+    position: absolute;
+    top: 123px;
+    left: 21px;
+  }
+
+  img {
+    width: 344px;
+    height: auto;
+  }
+}
