@@ -746,9 +746,9 @@ button,
     opacity: 1;
     -webkit-transition: 0.3s ease;
     transition: 0.3s ease; }
-  @media (hover: hover), screen and (min-width: 0\0) {
-    .list span:hover:not(.focus-visible) svg, .list span.focus-visible:focus svg {
-      opacity: 0.5; } }
+    @media (hover: hover), screen and (min-width: 0\0) {
+      .list span svg:hover:not(.focus-visible), .list span svg.focus-visible:focus {
+        opacity: 0.5; } }
 
 .list--big li {
   font-size: 18px; }

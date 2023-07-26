@@ -28,10 +28,8 @@
     svg {
       opacity: 1;
       transition: $trans-default;
-    }
 
-    @include has-hover {
-      svg {
+      @include has-hover {
         opacity: 0.5;
       }
     }
