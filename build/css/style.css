@@ -499,6 +499,9 @@ button,
   border: none;
   background-color: transparent; }
 
+.sprite {
+  display: none; }
+
 /* stylelint-disable */
 .visually-hidden {
   position: absolute !important;
@@ -568,9 +571,27 @@ button,
   border-top: 2px solid #7e7e7e;
   border-bottom: 2px solid #7e7e7e; }
   .footer h2 {
-    text-align: left;
+    font-style: italic;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     font-family: Georgia, Arial, sans-serif;
     color: #262626; }
+  .footer .link {
+    font-style: italic;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 5px; }
 
 .hystmodal__window {
   position: relative;
@@ -650,18 +671,28 @@ button,
     font-weight: 600; }
 
 .iframe {
-  margin-bottom: 24px;
-  position: relative; }
+  margin-bottom: 24px; }
+  .iframe__wrapper {
+    position: relative; }
   .iframe iframe {
     width: 300px;
     height: 540px;
     border: none;
     position: absolute;
-    top: 123px;
+    top: 76px;
     left: 21px; }
+    @media (max-width: 399px) {
+      .iframe iframe {
+        width: 250px;
+        height: 442px;
+        top: 68px;
+        left: 18px; } }
   .iframe img {
     width: 344px;
     height: auto; }
+    @media (max-width: 399px) {
+      .iframe img {
+        width: 285px; } }
 
 .link {
   display: inline-block;
@@ -702,6 +733,22 @@ button,
   font-weight: 400; }
   .list li b {
     color: #000000; }
+  .list li i {
+    font-style: normal;
+    font-weight: 600;
+    white-space: nowrap; }
+
+.list span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .list span svg {
+    opacity: 1;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease; }
+  @media (hover: hover), screen and (min-width: 0\0) {
+    .list span:hover:not(.focus-visible) svg, .list span.focus-visible:focus svg {
+      opacity: 0.5; } }
 
 .list--big li {
   font-size: 18px; }
@@ -736,7 +783,6 @@ button,
   transition: 0.3s ease; }
   @media (hover: hover), screen and (min-width: 0\0) {
     .button:hover:not(.focus-visible), .button.focus-visible:focus {
-      color: #007bff;
       outline: 0;
       -webkit-box-shadow: 0 0 10px 0 rgba(0, 123, 255, 0.5) inset, 0 0 10px 4px rgba(0, 123, 255, 0.2);
               box-shadow: 0 0 10px 0 rgba(0, 123, 255, 0.5) inset, 0 0 10px 4px rgba(0, 123, 255, 0.2); } }

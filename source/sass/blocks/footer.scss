@@ -4,8 +4,18 @@
   border-bottom: 2px solid $color-grey;
 
   h2 {
-    text-align: left;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     font-family: Georgia, Arial, sans-serif;
     color: $color-darkmain;
+  }
+
+  .link {
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    padding: 5px;
   }
 }

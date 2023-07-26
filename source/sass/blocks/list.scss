@@ -14,6 +14,27 @@
     b {
       color: $color-default-black;
     }
+
+    i {
+      font-style: normal;
+      font-weight: $font-weight-bold;
+      white-space: nowrap;
+    }
+  }
+
+  span {
+    display: flex;
+
+    svg {
+      opacity: 1;
+      transition: $trans-default;
+    }
+
+    @include has-hover {
+      svg {
+        opacity: 0.5;
+      }
+    }
   }
 
   &--big {

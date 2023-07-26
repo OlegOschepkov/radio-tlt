@@ -2,18 +2,18 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <title>Радиолюбители Тольятти</title>
-    <link rel="stylesheet" href="css/style.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.min.css?1" type="text/css">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="favicon/site.webmanifest">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-     <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="manifest" href="favicon/site.webmanifest">
     <meta name="description" content="Мы - группа радиолюбителей безлицензионного LPD диапазона города Тольятти Самарской области, используем частоты 434.750 МГц и 434.775 МГц, что соответствует 68 и 69 каналу.  При общении, для обозначения друг друга, мы используем числовые и словесные позывные. У нас работает FRN сервер для доступа в радиоэфир без использования радиостанций. Также в эфир каждый час передаются сигналы точного времени, и каждые три часа передаются информационные сообщения. Желаем всем хорошей связи и до встречи в эфире, 73!">
     <meta name="keywords" content="lpd, рация, радиосвязь, радиоэфир, 433 МГц, 70 см, FRN">
     <meta name="robots" content="index, nofollow">
@@ -24,6 +24,9 @@
 </head>
 
 <body>
+  <div class="sprite">
+    @@include("build/img/sprite.svg")
+  </div>
   <header class="header">
     <div class="container">
       <h1> Радиолюбители LPD диапазона (433-434 MHz) города Тольятти<br />
@@ -38,7 +41,7 @@
       <div class="container">
         <h2> Работает FRN сервер для доступа к радиоэфиру через смартфон </h2>
         <p>
-          <button class="button" data-hystmodal="#legal">Как подключиться к сети FRN</button>
+          <button class="button" data-hystmodal="#legal">Подключиться к сети FRN</button>
         </p>
 
         <h2>Доступны каналы:</h2>
@@ -52,8 +55,10 @@
 
         <div class="iframe">
           <h2>Список подключенных клиентов на FRN сервере:</h2>
-          <img src="img/iphone.png" alt="">
-          <iframe id="iframe" src="iframe.html"></iframe>
+          <div class="iframe__wrapper">
+            <img src="img/iphone.png" alt="">
+            <iframe id="iframe" src="iframe.html"></iframe>
+          </div>
         </div>
       </div>
     </div>
@@ -61,7 +66,11 @@
 
   <footer class="footer">
     <div class="container">
-      <h2> <i>Наша группа в <a target="_blank" class="link" href="https://t.me/Radio_TLT63">Telegram</a> канале  </i></h2>
+      <h2> Наша группа в&nbsp;<a target="_blank" class="link" href="https://t.me/Radio_TLT63">
+        <svg width="24" height="24">
+          <use xlink:href="#icon-tg"></use>
+        </svg>
+        &nbsp;Telegram</a>&nbsp;канале</h2>
     </div>
   </footer>
 
@@ -72,9 +81,9 @@
         <button data-hystclose class="hystmodal__close">Закрыть</button>
         <div class="content">
           <h2>Предупреждение!</h2>
+          <h3>Скачивая программу и регистрируясь в нашей FRN сети, вы понимаете и безусловно принимаете условия пользования этим сервисом. А именно:
+          </h3>
           <ul class="list">
-            <li>Скачивая программу и регистрируясь в нашей FRN сети, вы понимаете и безусловно принимаете условия пользования этим сервисом. А именно:
-            </li>
             <li>Вы соглашаетесь, что запрещена противоправная деятельность в любом ее виде и проявлении.
             </li>
             <li>Вы соглашаетесь, что ведется запись всех переговоров, которые могут быть предоставлены силовым структурам.</li>
@@ -82,7 +91,6 @@
             <li>Вы соглашаетесь, что мнения и высказывания участников этого сервиса, являются исключительно их личным мнением, а не мнением организаторов сервиса.</li>
             <li>Вы соглашаетесь, что опыт использования этого сервиса может не оправдать ваших ожиданий.</li>
           </ul>
-          <h2>Приятного общения, и до встреч в эфире, 73!</h2>
           <button class="button" data-hystmodal="#connect">Я согласен</button>
         </div>
       </div>
@@ -97,10 +105,17 @@
           <h2>Как подключиться к сети FRN</h2>
           <ul class="list">
             <li>
-              скачать <a class="link" href="/files/GRNClient.apk" title="скачать">программу</a> для смартфонов на базе андроид,
+              <span>
+              скачать&nbsp;<a class="link" href="/files/GRNClient.apk" title="скачать">программу</a>&nbsp;для смартфонов на базе андроид&nbsp;
+                <a href="/files/GRNClient.apk" title="скачать">
+                  <svg width="22" height="22">
+                    <use xlink:href="#icon-download"></use>
+                  </svg>
+                </a>
+              </span>
             </li>
             <li>
-              в настройках программы прописываем адрес сервера как "<b>radio-tlt.ru:10024</b>" без кавычек,
+              в настройках программы прописываем адрес сервера как "<i>radio-tlt.ru:10024</i>" без кавычек,
             </li>
             <li>
               канал по умолчанию оставляем пустым,
@@ -115,7 +130,7 @@
               тип микрофона поменять на "стандартный микрофон",
             </li>
             <li>
-              усиление микрофона установить +6...+8дБ,
+              усиление микрофона установить +6...+8 дБ,
             </li>
             <li>
               набор символов указать "кириллический"
@@ -127,7 +142,7 @@
     </div>
   </div>
 
-  <script src="js/hystmodal.min.js"></script>1
+  <script src="js/hystmodal.min.js"></script>
   <script>
     const myModal = new HystModal({
       linkAttributeName: "data-hystmodal",
