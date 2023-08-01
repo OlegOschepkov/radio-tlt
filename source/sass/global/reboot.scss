@@ -35,6 +35,11 @@ body {
   background-color: $color-alabaster;
 }
 
+main {
+  display: flex;
+  flex-grow: 1;
+}
+
 a {
   color: $color-persian-blue;
   text-decoration: none;

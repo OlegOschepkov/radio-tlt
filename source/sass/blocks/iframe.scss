@@ -7,6 +7,7 @@
 
   iframe {
     width: 300px;
+    min-width: 300px;
     height: 540px;
     border: none;
     position: absolute;
@@ -15,6 +16,7 @@
 
     @include vp-400 {
       width: 250px;
+      min-width: 250px;
       height: 442px;
       top: 68px;
       left: 18px;
@@ -23,10 +25,12 @@
 
   img {
     width: 344px;
+    min-width: 344px;
     height: auto;
 
     @include vp-400 {
       width: 285px;
+      min-width: 285px;
     }
   }
 }

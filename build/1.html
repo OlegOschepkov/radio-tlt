@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="ru">
+<html lang="ru"><head>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&amp;display=swap" rel="stylesheet">
+  <link href="data:text/css,%5Bid*%3D'google_ads_iframe'%5D%2C%5Bid*%3D'taboola-'%5D%2C.taboolaHeight%2C.taboola-placeholder%2C%23credential_picker_container%2C%23credentials-picker-container%2C%23credential_picker_iframe%2C%5Bid*%3D'google-one-tap-iframe'%5D%2C%23google-one-tap-popup-container%2C.google-one-tap-modal-div%7Bdisplay%3Anone!important%3Bmin-height%3A0!important%3Bheight%3A0!important%3B%7D" rel="stylesheet" type="text/css"></head>
 
-<head>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-</head>
+<body cz-shortcut-listen="true">
+<main>
+  <div class="container"><h3 data-scroll=""><span>TLT-Repiter:</span></h3><p data-scroll=""><span>    -; -;</span></p><p data-scroll=""><span>    ---TLT-Repiter---; Togliatti;</span></p><p data-scroll=""><span>    stronzij, Viktor; Togliatti - Avtozavodsky district;</span></p><h3 data-scroll=""><span>UL-Repiter:</span></h3><p data-scroll=""><span>    -; -;</span></p><p data-scroll=""><span>    @bot; local;</span></p><h3 data-scroll=""><span>CB_27.200_MHz:</span></h3><p data-scroll=""><span>    Gateway, Ch_20Ru_FM; Togliatti;</span></p><h3 data-scroll=""><span>Talks:</span></h3><p data-scroll=""><span>    @bot; local;</span></p></div>
+</main>
 
-<body>
-  <main>
-    <div class="container">
-    </div>
-  </main>
-</body>
 
 <style>
   html {
@@ -40,7 +36,7 @@
     max-width: 700px;
     height: 100%;
     overflow: hidden;
-    padding: 0 0 0 24px;
+    padding: 0 24px;
     flex-grow: 1;
   }
 
@@ -98,19 +94,17 @@
   }
 </style>
 
-</html>
+
 
 <script>
   const container = document.querySelector('.container');
+  const HEIGHT = 540;
 
   const autoScroll = () => {
     const elems = document.querySelectorAll('[data-scroll]');
-    const computedStyle = getComputedStyle(container);
-    const InnerElementWidth = container.clientWidth - parseFloat(computedStyle.paddingLeft);
-
     if (elems.length && container) {
       elems.forEach((el) => {
-        if (el.querySelector('span').scrollWidth > InnerElementWidth) {
+        if (el.scrollWidth > container.clientWidth) {
           el.classList.add('scroll-horizontal')
         }
       })
@@ -126,7 +120,7 @@
           container.innerHTML = container.innerHTML + `<h3 data-scroll><span>${el}</span></h3>`;
         } else {
           const text = el.split(';').slice(0, 2).join('; ');
-          container.innerHTML = container.innerHTML + `<p data-scroll><span>${text.trim() == '-; -' ? 'Crosslink' : text};</span></p>`;
+          container.innerHTML = container.innerHTML + `<p data-scroll><span>${text == '-; -;' ? 'Crosslink' : text};</span></p>`;
         }
       }
     })
@@ -145,9 +139,7 @@
       } else {
         console.log(`Готово, получили ${xhr.response.length} байт`);
         renderData(xhr.response);
-        setTimeout(() => {
-          autoScroll();
-        }, 1000)
+        autoScroll();
       }
     };
 
@@ -170,3 +162,4 @@
     requestData();
   }, 20000);
 </script>
+</body></html>
